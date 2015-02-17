@@ -65,6 +65,10 @@ public class WebzProperties extends HashMap<String, String> {
 
 	public static final String WEBZ_CONFIG_FOLDER = ".webz";
 
+	public static final String GENERAL_PROPERTIES_FILE = "general.properties";
+	public static final String STATUS_CODES_PROPERTIES_FILE = "status-codes.properties";
+	public static final String MIMETYPES_PROPERTIES_FILE = "mimetypes.properties";
+
 	public static final String WEBZ_FS_IMPL_CLASS_PROPERTY = "webz.file.system.impl.class";
 	public static final String FS_CACHE_ENABLED_PROPERTY = "file.system.cache.enabled";
 	public static final String FS_CACHE_IMPL_CLASS_PROPERTY = "file.system.cache.impl.class";
@@ -77,10 +81,6 @@ public class WebzProperties extends HashMap<String, String> {
 	public static final String GIT_REPO_LOCAL_FOLDER_NAME_PROPERTY = "git.repo.local.folder.name";
 	public static final String LOCAL_STORAGE_BASE_PATH_PROPERTY = "local.storage.base.path";
 	public static final String LOCAL_STORAGE_BASE_PATH_ENV_VAR_PROPERTY = "local.storage.base.path.env.var";
-
-	public static final String GENERAL_PROPERTIES_FILE = "general.properties";
-	public static final String STATUS_CODES_PROPERTIES_FILE = "status-codes.properties";
-	public static final String MIMETYPES_PROPERTIES_FILE = "mimetypes.properties";
 
 	public static final String APP_DISPLAY_NAME_PROPERTY = "app.display.name";
 	public static final String DEFAULT_MIMETYPE_PROPERTY = "default.mimetype";
