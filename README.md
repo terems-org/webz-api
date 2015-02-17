@@ -1,2 +1,2 @@
-# webz-api
-WebZ API (Apache License v2.0)
+# WebZ API v0.9 beta ([Pedesis](https://www.pinterest.com/teremterem/pedesis-from-ancient-greek-a-leaping/))
+
