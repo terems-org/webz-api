@@ -16,7 +16,7 @@ Add this maven dependency to your pom.xml:
 </dependency>
 ```
 
-**NOTE: Currently you also need to add the folloging** (either to your pom.xml or to your global setting.xml):
+**NOTE:** Currently you also need to add the folloging (either to your pom.xml or to your global setting.xml):
 ```
 <repositories>
   ...
