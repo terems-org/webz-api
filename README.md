@@ -1,4 +1,4 @@
-# WebZ API v0.9 beta ([Pedesis](https://www.pinterest.com/teremterem/pedesis-from-ancient-greek-a-leaping/))
+# WebZ API v0.9.1 beta ([Pedesis](https://www.pinterest.com/teremterem/pedesis-from-ancient-greek-a-leaping/))
 
 ### WebZ API serves two purposes:
  1. At one hand it lets new WebZ Filters be developed and then plugged into [WebZ Server](https://github.com/terems-org/webz-server#webz-server-v09-beta-pedesis) in order to have some custom server side java logic in place.
@@ -30,4 +30,4 @@ Add this maven dependency to your pom.xml:
   </repository>
 </repositories>
 ```
-P.S. Soon enough version **0.9** (*Pedesis* beta) will be released and the need to specify Sonatype snapshots repository will be eliminated.
+P.S. Soon enough version **0.9.1** (*Pedesis* beta) will be released and the need to specify Sonatype snapshots repository will be eliminated.
