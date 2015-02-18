@@ -30,4 +30,4 @@ Add this maven dependency to your pom.xml:
   </repository>
 </repositories>
 ```
-*Soon enough this artifact will be released and the need to specify this repository will be eliminated...*
+Soon enough this artifact will be released and the need to specify this repository will be eliminated.
