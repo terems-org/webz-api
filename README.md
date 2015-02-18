@@ -7,7 +7,7 @@ WebZ API serves two purposes:
 How To Use
 ------
 
-Add this maven dependency to your **pom.xml**:
+Add the following maven dependency to your **pom.xml**:
 ```
 <dependency>
   <groupId>org.terems</groupId>
@@ -16,7 +16,7 @@ Add this maven dependency to your **pom.xml**:
 </dependency>
 ```
 
-**NOTE:** currently you also need to add the following (either to your **pom.xml** or to your global **setting.xml**):
+**NOTE:** currently you also need to add the following declaration either to your **pom.xml** as well or to your global **setting.xml**:
 ```
 <repositories>
   ...
