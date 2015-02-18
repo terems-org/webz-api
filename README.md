@@ -7,7 +7,7 @@
 How To Use
 ------
 
-Maven Dependency:
+Add this maven dependency to your pom.xml:
 ```
 <dependency>
   <groupId>org.terems</groupId>
@@ -16,7 +16,7 @@ Maven Dependency:
 </dependency>
 ```
 
-**You also need to add the folloging** (either to your pom.xml or to your global setting.xml):
+**NOTE: Currently you also need to add the folloging** (either to your pom.xml or to your global setting.xml):
 ```
 <repositories>
   ...
