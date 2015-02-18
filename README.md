@@ -16,7 +16,7 @@ Add this maven dependency to your pom.xml:
 </dependency>
 ```
 
-**NOTE:** Currently you also need to add the folloging (either to your pom.xml or to your global setting.xml):
+**NOTE:** currently you also need to add the following (either to your pom.xml or to your global setting.xml):
 ```
 <repositories>
   ...
@@ -30,3 +30,4 @@ Add this maven dependency to your pom.xml:
   </repository>
 </repositories>
 ```
+*Soon enough this artifact will be released and the need to specify this repository will be eliminated...*
