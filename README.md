@@ -30,4 +30,4 @@ Add this maven dependency to your pom.xml:
   </repository>
 </repositories>
 ```
-**P.S.** Soon enough **webz-api** beta **0.9-PEDESIS** will be released and the need to specify Sonatype snapshots repository will be eliminated.
+**P.S.** Soon enough **webz-api** 0.9-PEDESIS will be released and the need to specify Sonatype snapshots repository will be eliminated.
