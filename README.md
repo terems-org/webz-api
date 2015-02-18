@@ -16,7 +16,7 @@ Maven Dependency:
 </dependency>
 ```
 
-*Additionally, you need to add the folloging to your pom.xml or setting.xml:*
+**Additionally, you need to add the folloging to your pom.xml or setting.xml:**
 ```
 <repositories>
   ...
