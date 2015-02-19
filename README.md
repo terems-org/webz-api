@@ -12,7 +12,7 @@ Add the following maven dependency to your **pom.xml**:
 <dependency>
   <groupId>org.terems</groupId>
   <artifactId>webz-api</artifactId>
-  <version>0.9.PEDESIS-SNAPSHOT</version>
+  <version>0.9.1-SNAPSHOT</version>
 </dependency>
 ```
 

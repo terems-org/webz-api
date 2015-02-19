@@ -7,7 +7,7 @@
 	<groupId>org.terems</groupId>
 	<artifactId>webz-api</artifactId>
 	<packaging>jar</packaging>
-	<version>0.9.PEDESIS-SNAPSHOT</version>
+	<version>0.9.1-SNAPSHOT</version>
 	<name>WebZ API</name>
 	<description>WebZ Server, API</description>
 
