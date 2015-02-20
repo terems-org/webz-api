@@ -6,7 +6,7 @@ WebZ API serves two purposes:
 
 > ***ATTENTION! Unlike WebZ API, WebZ Server itself is licensed under GNU Affero GPL v3.0*** *and right now the only way to extend WebZ Server in any way (including custom WebZ Filters) is to package the extensions together with the server, which will automatically make them "contaminated" with Affero GPL.*
 
-Later on (hopefully starting from the release of v0.9.1) certain levels of flexibility will be introduced - certain types of extensions will become possible without affecting the server's package.
+Later on (hopefully starting from the release of v0.9.1) certain levels of flexibility will be introduced in terms of linking - certain types of extensions will become possible without affecting the server's package...
 
 How To Use
 ------
