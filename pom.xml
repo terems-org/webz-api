@@ -38,12 +38,14 @@
 
 		<!-- ~ -->
 
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
 		<servlet.api.version>3.0.1</servlet.api.version><!-- 3.1.0 -->
 
 		<maven.compiler.plugin.version>3.2</maven.compiler.plugin.version>
 		<maven.eclipse.plugin.version>2.9</maven.eclipse.plugin.version>
 
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.resources.plugin.version>2.7</maven.resources.plugin.version>
 
 	</properties>
 
@@ -70,7 +72,48 @@
 		</repository>
 	</distributionManagement>
 	<build>
+		<resources>
+			<resource>
+				<filtering>true</filtering>
+				<directory>src/main/resources</directory>
+			</resource>
+			<resource>
+				<filtering>false</filtering>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**</include>
+				</includes>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
+		</resources>
 		<plugins>
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>${maven.resources.plugin.version}</version>
+				<executions>
+					<execution>
+						<id>copy-resources</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${basedir}/target/classes/META-INF</outputDirectory>
+							<resources>
+								<resource>
+									<directory>.</directory>
+									<filtering>false</filtering>
+									<includes>
+										<include>LICENSE</include>
+									</includes>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
