@@ -36,4 +36,4 @@ Add the following maven dependency to your **pom.xml**:
   </repository>
 </repositories>
 ```
-*Soon version* ***0.9.1*** *(Pedesis beta) will be released and the need to specify Sonatype snapshots repository will be eliminated...*
+After version* ***0.9.1*** *(Pedesis beta) is released the need to specify Sonatype snapshots repository will be eliminated...
