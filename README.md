@@ -1,7 +1,7 @@
 # WebZ API v0.9 beta ([Pedesis](https://www.pinterest.com/teremterem/pedesis-from-ancient-greek-a-leaping/))
 
 WebZ API serves two purposes:
- 1. At one hand it lets new WebZ Filters be developed and then plugged into [**WebZ Server**](https://github.com/terems-org/webz-server) in order to have some custom server side java logic in place.
+ 1. At one hand it lets new WebZ Filters be developed and then plugged into [WebZ Server](https://github.com/terems-org/webz-server) in order to have some custom server side java logic in place.
  1. At the other hand it also allows the server to be extended from the other end - custom file sources can be implemented: for ex. adapters for external storages like Dropbox, adapters for SCM providers like GitHub (Git adapters) etc.
 
 > ***ATTENTION! Unlike WebZ API, WebZ Server itself is licensed under GNU Affero GPL v3.0*** *and this has the following consequences:*
