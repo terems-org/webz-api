@@ -8,7 +8,7 @@ WebZ API serves two purposes:
 >  1. *The extensions you develop using WebZ API are not affected by Affero GPL when they are on their own.*
 >  1. *However, right now the only way to extend WebZ Server in any way (including custom WebZ Filters) is to package the extensions together with the server, and the moment you do this your extensions will automatically become "contaminated" by Affero GPL.*
 >
-> *In the future certain levels of flexibility will be introduced to resolve this situation - certain types of extensions will become possible without affecting the server's package (most likely it will be WebZ Filters)...*
+> *In future certain levels of flexibility will be introduced to resolve this situation - certain types of extensions will become possible without affecting the server's package (most likely it will be WebZ Filters)...*
 
 How To Use
 ------
