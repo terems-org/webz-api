@@ -20,7 +20,7 @@ Add the following maven dependency to your **pom.xml**:
 </dependency>
 ```
 
-**NOTE:** currently you also need to add the following declaration (either to your **pom.xml** or to your global **settings.xml**):
+**NOTE:** currently you also need to specify Sonatype snapshots repository (either in your **pom.xml** or in your global **settings.xml**):
 ```
 <repositories>
   ...
@@ -34,4 +34,4 @@ Add the following maven dependency to your **pom.xml**:
   </repository>
 </repositories>
 ```
-*Soon enough version* ***0.9.1*** *(Pedesis beta) will be released and the need to specify Sonatype snapshots repository will be eliminated...*
+*Soon version* ***0.9.1*** *(Pedesis beta) will be released and the need to specify Sonatype snapshots repository will be eliminated...*
