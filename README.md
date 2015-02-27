@@ -1,4 +1,4 @@
-# WebZ API v0.9 beta ([Pedesis](https://www.pinterest.com/teremterem/pedesis-from-ancient-greek-a-leaping/))
+# WebZ API v0.9 beta ([Pedesis](https://www.pinterest.com/terems_org/pedesis-from-ancient-greek-a-leaping/))
 
 WebZ API serves two purposes:
  1. At one hand it lets new WebZ Filters be developed and then plugged into [WebZ Server](https://github.com/terems-org/webz-server) in order to have some custom server side java logic in place.
