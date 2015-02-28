@@ -4,7 +4,7 @@ WebZ API lets new WebZ Filters be developed and then plugged into [WebZ Server](
 
 > ***ATTENTION!*** *Right now the only way to extend WebZ Server with custom WebZ Filters is to package your code together with the server, and the moment you do this your code will automatically become "contaminated" by Affero GPL...*
 >
-> *Some time later it will become possible to supply custom WebZ Filters to the server as "user input" and this problem will be eliminated.*
+> *Some time later in order to resolve this problem it will become possible to supply custom WebZ Filters to the server as "user input" (WebZ Server will be picking up your custom WebZ Filters directly from your WebZ site/SPA repos).*
 
 How To Use
 ------
@@ -32,4 +32,4 @@ Add the following maven dependency to your **pom.xml**:
   </repository>
 </repositories>
 ```
-> *After version* ***0.9.1*** *(Pedesis beta) is released the need to specify Sonatype snapshots repository will be eliminated...*
+> *When version* ***0.9.1*** *(Pedesis beta) comes out the artifact will be officially released at Sonatype and then you will not need to explicitly reference any external repositories...*
