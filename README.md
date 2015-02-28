@@ -1,6 +1,6 @@
 # WebZ API v0.9 beta ([Pedesis](https://www.pinterest.com/terems_org/pedesis-from-ancient-greek-a-leaping/))
 
-WebZ API lets new **WebZ Filters** be developed and then plugged into [WebZ Server](https://github.com/terems-org/webz-server) in order to have some custom server side java logic in place.
+WebZ API lets new WebZ Filters be developed and then plugged into [WebZ Server](https://github.com/terems-org/webz-server) in order to have some custom server side java logic in place.
 
 > ***ATTENTION!*** *Right now the only way to extend WebZ Server with custom WebZ Filters is to package your code together with the server, and the moment you do this your code will automatically become "contaminated" by GNU Affero GPL.*
 >
