@@ -32,4 +32,4 @@ Add the following maven dependency to your **pom.xml**:
   </repository>
 </repositories>
 ```
-> *When version* ***0.9.1*** *(Pedesis beta) comes out the artifact will be officially released at Sonatype and then you will not need to explicitly reference any external repositories.*
+> *When version* ***0.9.1*** *(Pedesis beta) comes out the artifact will be officially released at Sonatype and then you will not need to explicitly reference any external repositories...*
