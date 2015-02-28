@@ -2,7 +2,7 @@
 
 WebZ API lets new WebZ Filters be developed and then plugged into [WebZ Server](https://github.com/terems-org/webz-server) in order to have some custom server side java logic in place.
 
-> ***ATTENTION!*** *Right now the only way to extend WebZ Server with custom WebZ Filters is to package your code together with the server, and the moment you do this your code will automatically become "contaminated" by Affero GPL...*
+> ***ATTENTION!*** *Right now the only way to extend WebZ Server with custom WebZ Filters is to package your code together with the server, and the moment you do this your code will automatically become "contaminated" by Affero GPL.*
 >
 > *Some time later in order to resolve this problem it will become possible to supply custom WebZ Filters to the server as "user input" (WebZ Server will be picking up your custom WebZ Filters directly from your WebZ site/SPA repos).*
 
@@ -32,4 +32,4 @@ Add the following maven dependency to your **pom.xml**:
   </repository>
 </repositories>
 ```
-> *When version* ***0.9.1*** *(Pedesis beta) comes out the artifact will be officially released at Sonatype and then you will not need to explicitly reference any external repositories...*
+> *When version* ***0.9.1*** *(Pedesis beta) comes out the artifact will be officially released at Sonatype and then you will not need to explicitly reference any external repositories.*
