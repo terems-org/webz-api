@@ -2,11 +2,9 @@
 
 WebZ API lets new WebZ Filters be developed and then plugged into [WebZ Server](https://github.com/terems-org/webz-server) in order to have some custom server side java logic in place.
 
-> ***ATTENTION! Unlike WebZ API, WebZ Server itself is licensed under GNU Affero GPL v3.0*** *and this has the following consequences:*
->  1. *The extensions you develop using WebZ API are not affected by Affero GPL when they are on their own.*
->  1. *However, right now the only way to extend WebZ Server in any way (including custom WebZ Filters) is to package the extensions together with the server, and the moment you do this your extensions will automatically become "contaminated" by Affero GPL.*
+> ***ATTENTION!*** *Right now the only way to extend WebZ Server with custom WebZ Filters is to package your code together with the server, and the moment you do this your code will automatically become "contaminated" by Affero GPL...*
 >
-> *In the future certain levels of flexibility will be introduced to "ease the situation" - certain types of extensions will become possible without affecting the server's package (most likely it will be WebZ Filters)...*
+> *Some time later it will become possible to supply custom WebZ Filters to the server as "user input" and this problem will be eliminated.*
 
 How To Use
 ------
