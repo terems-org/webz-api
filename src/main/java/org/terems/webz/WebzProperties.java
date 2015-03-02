@@ -87,7 +87,7 @@ public class WebzProperties extends HashMap<String, String> {
 	public static final String DEFAULT_MIMETYPE_PROPERTY = "default.mimetype";
 	public static final String DEFAULT_ENCODING_PROPERTY = "default.encoding";
 
-	public static final String WELCOME_EXTENSIONS_PROPERTY = "welcome.extensions";
+	public static final String WELCOME_FILENAME_SUFFIXES_PROPERTY = "welcome.filename.suffixes";
 	public static final String WELCOME_FILENAMES_PROPERTY = "welcome.filenames";
 
 	public static final String PATH_TO_404_FILE_PROPERTY = "404";

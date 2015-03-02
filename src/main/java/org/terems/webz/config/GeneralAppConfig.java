@@ -33,7 +33,7 @@ public class GeneralAppConfig extends WebzConfigObject {
 	private String defaultMimetype;
 	private String defaultEncoding;
 
-	private Collection<String> welcomeExtensionsLowerCased;
+	private Collection<String> welcomeFilenameSuffixesLowerCased;
 	private Collection<String> welcomeFilenamesLowerCased;
 
 	/** TODO !!! describe !!! **/
@@ -52,8 +52,8 @@ public class GeneralAppConfig extends WebzConfigObject {
 	}
 
 	/** TODO !!! describe !!! **/
-	public Collection<String> getWelcomeExtensionsLowerCased() {
-		return welcomeExtensionsLowerCased;
+	public Collection<String> getWelcomeFilenameSuffixesLowerCased() {
+		return welcomeFilenameSuffixesLowerCased;
 	}
 
 	/** TODO !!! describe !!! **/
@@ -73,8 +73,8 @@ public class GeneralAppConfig extends WebzConfigObject {
 		defaultMimetype = properties.getProperty(WebzProperties.DEFAULT_MIMETYPE_PROPERTY, WebzDefaults.MIMETYPE);
 		defaultEncoding = properties.getProperty(WebzProperties.DEFAULT_ENCODING_PROPERTY, WebzDefaults.ENCODING);
 
-		welcomeExtensionsLowerCased = populateLowerCasedWelcomeItems(properties.getProperty(WebzProperties.WELCOME_EXTENSIONS_PROPERTY,
-				WebzDefaults.WELCOME_EXTENSIONS_LIST));
+		welcomeFilenameSuffixesLowerCased = populateLowerCasedWelcomeItems(properties.getProperty(
+				WebzProperties.WELCOME_FILENAME_SUFFIXES_PROPERTY, WebzDefaults.WELCOME_EXTENSIONS_LIST));
 		welcomeFilenamesLowerCased = populateLowerCasedWelcomeItems(properties.getProperty(WebzProperties.WELCOME_FILENAMES_PROPERTY,
 				WebzDefaults.WELCOME_FILENAMES_LIST));
 	}
