@@ -127,27 +127,13 @@ public class WebzUtils {
 	private static final ClassLoader DEFAULT_CLASS_LOADER = WebzUtils.class.getClassLoader();
 
 	/** TODO !!! describe !!! **/
-	public static Properties loadPropertiesFromClasspath(String resourceName, boolean failIfNotFound) throws WebzException {
-		return loadPropertiesFromClasspath(resourceName, DEFAULT_CLASS_LOADER, failIfNotFound);
-	}
-
-	/** TODO !!! describe !!! **/
-	public static void loadPropertiesFromClasspath(Properties properties, String resourceName, boolean failIfNotFound) throws WebzException {
-		loadPropertiesFromClasspath(properties, resourceName, DEFAULT_CLASS_LOADER, failIfNotFound);
-	}
-
-	/** TODO !!! describe !!! **/
-	public static Properties loadPropertiesFromClasspath(String resourceName, ClassLoader classLoader, boolean failIfNotFound)
+	public static boolean loadPropertiesFromClasspath(Properties properties, String resourceName, boolean failIfNotFound)
 			throws WebzException {
-
-		Properties properties = new Properties();
-		loadPropertiesFromClasspath(properties, resourceName, classLoader, failIfNotFound);
-
-		return properties;
+		return loadPropertiesFromClasspath(properties, resourceName, DEFAULT_CLASS_LOADER, failIfNotFound);
 	}
 
 	/** TODO !!! describe !!! **/
-	public static void loadPropertiesFromClasspath(Properties properties, String resourceName, ClassLoader classLoader,
+	public static boolean loadPropertiesFromClasspath(Properties properties, String resourceName, ClassLoader classLoader,
 			boolean failIfNotFound) throws WebzException {
 
 		if (resourceName == null) {
@@ -160,7 +146,7 @@ public class WebzUtils {
 				if (failIfNotFound) {
 					throw new WebzException("'" + resourceName + "' was not found on classpath");
 				}
-				return;
+				return false;
 			}
 			properties.load(in);
 
@@ -170,19 +156,11 @@ public class WebzUtils {
 		} finally {
 			closeSafely(in);
 		}
+		return true;
 	}
 
 	/** TODO !!! describe !!! **/
-	public static Properties loadProperties(WebzFile file, boolean failIfNotFound) throws WebzException {
-
-		Properties properties = new Properties();
-		loadProperties(properties, file, failIfNotFound);
-
-		return properties;
-	}
-
-	/** TODO !!! describe !!! **/
-	public static void loadProperties(Properties properties, WebzFile file, boolean failIfNotFound) throws WebzException {
+	public static boolean loadProperties(Properties properties, WebzFile file, boolean failIfNotFound) throws WebzException {
 
 		if (file == null) {
 			throw new NullPointerException("null WebzFile was supplied - properties cannot be read");
@@ -196,7 +174,7 @@ public class WebzUtils {
 				if (failIfNotFound) {
 					throw new WebzException("'" + file.getPathname() + "' was not found");
 				}
-				return;
+				return false;
 			}
 			properties.load(fileDownloader.content);
 
@@ -208,6 +186,7 @@ public class WebzUtils {
 				fileDownloader.close();
 			}
 		}
+		return true;
 	}
 
 	/** TODO !!! describe !!! **/

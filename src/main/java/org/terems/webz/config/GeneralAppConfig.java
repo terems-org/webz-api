@@ -65,7 +65,9 @@ public class GeneralAppConfig extends WebzConfigObject {
 	public void init(WebzFile configFolder) throws WebzException {
 
 		WebzFile file = configFolder.getDescendant(WebzProperties.GENERAL_PROPERTIES_FILE);
-		Properties properties = WebzUtils.loadProperties(file, false);
+
+		Properties properties = new Properties();
+		WebzUtils.loadProperties(properties, file, false);
 
 		appDisplayName = properties.getProperty(WebzProperties.APP_DISPLAY_NAME_PROPERTY);
 		defaultMimetype = properties.getProperty(WebzProperties.DEFAULT_MIMETYPE_PROPERTY, WebzDefaults.MIMETYPE);

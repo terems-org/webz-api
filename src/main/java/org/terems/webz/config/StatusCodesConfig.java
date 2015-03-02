@@ -43,7 +43,9 @@ public class StatusCodesConfig extends WebzConfigObject {
 	public void init(WebzFile configFolder) throws WebzException {
 
 		WebzFile file = configFolder.getDescendant(WebzProperties.STATUS_CODES_PROPERTIES_FILE);
-		Properties properties = WebzUtils.loadProperties(file, false);
+
+		Properties properties = new Properties();
+		WebzUtils.loadProperties(properties, file, false);
 
 		pathTo404file = properties.getProperty(WebzProperties.PATH_TO_404_FILE_PROPERTY);
 		pathTo500file = properties.getProperty(WebzProperties.PATH_TO_500_FILE_PROPERTY);
