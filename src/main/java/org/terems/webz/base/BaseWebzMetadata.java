@@ -26,6 +26,12 @@ public abstract class BaseWebzMetadata implements WebzMetadata, WebzMetadata.Fil
 
 	/** TODO !!! describe !!! **/
 	@Override
+	public String getLinkedPathname() {
+		return null;
+	}
+
+	/** TODO !!! describe !!! **/
+	@Override
 	public FileSpecific getFileSpecific() throws IOException, WebzException {
 		return isFile() ? this : null;
 	}

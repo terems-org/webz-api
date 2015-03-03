@@ -31,6 +31,9 @@ public interface WebzMetadata {
 	public boolean isFolder() throws IOException, WebzException;
 
 	/** TODO !!! describe !!! **/
+	public String getLinkedPathname();
+
+	/** TODO !!! describe !!! **/
 	public FileSpecific getFileSpecific() throws IOException, WebzException;
 
 	/** TODO !!! describe !!! **/
