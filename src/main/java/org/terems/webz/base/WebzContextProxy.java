@@ -28,7 +28,7 @@ import org.terems.webz.WebzFile;
 public abstract class WebzContextProxy implements WebzContext {
 
 	/** TODO !!! describe !!! **/
-	protected abstract WebzContext getInnerContext() throws IOException, WebzException;
+	protected abstract WebzContext getInnerContext();
 
 	@Override
 	public WebzFile resolveFile(HttpServletRequest req) throws IOException, WebzException {
@@ -38,6 +38,11 @@ public abstract class WebzContextProxy implements WebzContext {
 	@Override
 	public WebzFile getFile(String pathInfo) throws IOException, WebzException {
 		return getInnerContext().getFile(pathInfo);
+	}
+
+	@Override
+	public String resolveUri(String pathname) {
+		return getInnerContext().resolveUri(pathname);
 	}
 
 }

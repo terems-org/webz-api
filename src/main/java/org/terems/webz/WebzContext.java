@@ -29,4 +29,7 @@ public interface WebzContext {
 	/** TODO !!! describe !!! **/
 	public WebzFile getFile(String pathInfo) throws IOException, WebzException;
 
+	/** TODO !!! describe !!! **/
+	public String resolveUri(String pathname);
+
 }
