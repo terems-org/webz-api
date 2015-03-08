@@ -28,6 +28,7 @@ import java.util.Properties;
 import java.util.TimeZone;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.terems.webz.WebzException;
 import org.terems.webz.WebzFile;
@@ -216,6 +217,15 @@ public class WebzUtils {
 		return (String) value;
 	}
 
+	/** TODO !!! describe !!! **/
+	public static <T> T assertNotNull(T value) {
+
+		if (value == null) {
+			throw new NullPointerException();
+		}
+		return value;
+	}
+
 	private static final String WEBZ_FILE_SYSTEM_ID_MSG = "WebzFileSystem ID";
 
 	/** TODO !!! describe !!! **/
@@ -275,6 +285,16 @@ public class WebzUtils {
 	/** TODO !!! describe !!! **/
 	public static boolean isHttpMethodGet(HttpServletRequest req) {
 		return BaseWebzFilter.HTTP_GET.equals(req.getMethod());
+	}
+
+	/** TODO !!! describe !!! **/
+	public static void prepareStandardHeaders(HttpServletResponse resp, String contentType, String characterEncoding, long contentLength) {
+
+		resp.setContentType(contentType);
+		resp.setCharacterEncoding(characterEncoding);
+
+		resp.addHeader("Content-Length", Long.toString(contentLength));
+		// with Servlet API 3.1 it could be: resp.setContentLengthLong(contentLength);
 	}
 
 	/** TODO !!! describe !!! **/

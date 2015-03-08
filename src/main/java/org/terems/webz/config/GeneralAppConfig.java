@@ -32,9 +32,13 @@ public class GeneralAppConfig extends WebzConfigObject {
 	private String appDisplayName;
 	private String defaultMimetype;
 	private String defaultEncoding;
+	private boolean usePermanentRedirects;
 
 	private Collection<String> welcomeFilenameSuffixesLowerCased;
 	private Collection<String> welcomeFilenamesLowerCased;
+
+	private String markdownSuffixLowerCased;
+	private String renderingTemplatePathname;
 
 	/** TODO !!! describe !!! **/
 	public String getAppDisplayName() {
@@ -52,6 +56,11 @@ public class GeneralAppConfig extends WebzConfigObject {
 	}
 
 	/** TODO !!! describe !!! **/
+	public boolean isUsePermanentRedirects() {
+		return usePermanentRedirects;
+	}
+
+	/** TODO !!! describe !!! **/
 	public Collection<String> getWelcomeFilenameSuffixesLowerCased() {
 		return welcomeFilenameSuffixesLowerCased;
 	}
@@ -59,6 +68,16 @@ public class GeneralAppConfig extends WebzConfigObject {
 	/** TODO !!! describe !!! **/
 	public Collection<String> getWelcomeFilenamesLowerCased() {
 		return welcomeFilenamesLowerCased;
+	}
+
+	/** TODO !!! describe !!! **/
+	public String getMarkdownSuffixLowerCased() {
+		return markdownSuffixLowerCased;
+	}
+
+	/** TODO !!! describe !!! **/
+	public String getRenderingTemplatePathname() {
+		return renderingTemplatePathname;
 	}
 
 	@Override
@@ -72,11 +91,18 @@ public class GeneralAppConfig extends WebzConfigObject {
 		appDisplayName = properties.getProperty(WebzProperties.APP_DISPLAY_NAME_PROPERTY);
 		defaultMimetype = properties.getProperty(WebzProperties.DEFAULT_MIMETYPE_PROPERTY, WebzDefaults.MIMETYPE);
 		defaultEncoding = properties.getProperty(WebzProperties.DEFAULT_ENCODING_PROPERTY, WebzDefaults.ENCODING);
+		usePermanentRedirects = Boolean.valueOf(properties.getProperty(WebzProperties.USE_PERMANENT_REDIRECTS_PROPERTY,
+				String.valueOf(WebzDefaults.USE_PERMANENT_REDIRECTS)));
 
 		welcomeFilenameSuffixesLowerCased = populateLowerCasedWelcomeItems(properties.getProperty(
-				WebzProperties.WELCOME_FILENAME_SUFFIXES_PROPERTY, WebzDefaults.WELCOME_EXTENSIONS_LIST));
+				WebzProperties.WELCOME_FILENAME_SUFFIXES_PROPERTY, WebzDefaults.WELCOME_FILENAME_SUFFIXES_LIST));
 		welcomeFilenamesLowerCased = populateLowerCasedWelcomeItems(properties.getProperty(WebzProperties.WELCOME_FILENAMES_PROPERTY,
 				WebzDefaults.WELCOME_FILENAMES_LIST));
+
+		markdownSuffixLowerCased = WebzUtils.toLowerCaseEng(properties.getProperty(WebzProperties.MARKDOWN_SUFFIX_PROPERTY,
+				WebzDefaults.MARKDOWN_SUFFIX));
+		renderingTemplatePathname = properties.getProperty(WebzProperties.RENDERING_TEMPLATE_PATHNAME_PROPERTY,
+				WebzDefaults.RENDERING_TEMPLATE_PATHNAME);
 	}
 
 	private Collection<String> populateLowerCasedWelcomeItems(String welcomeItemsCsv) {

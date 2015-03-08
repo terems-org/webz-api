@@ -25,7 +25,7 @@ import org.terems.webz.util.WebzUtils;
 public class WebzFileDownloader {
 
 	/** TODO !!! describe !!! **/
-	public WebzMetadata.FileSpecific fileSpecific;
+	public final WebzMetadata.FileSpecific fileSpecific;
 
 	/** TODO !!! describe !!! **/
 	public final InputStream content;
