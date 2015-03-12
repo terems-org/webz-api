@@ -30,6 +30,8 @@ public interface WebzFilter extends WebzDestroyable {
 	/** TODO !!! describe !!! **/
 	public void serve(HttpServletRequest req, HttpServletResponse resp, WebzChainContext chainContext) throws IOException, WebzException;
 
+	public static final String QUERY_PARAM_RAW = "raw";
+
 	public static final String HTTP_GET = "GET";
 	public static final String HTTP_POST = "POST";
 	public static final String HTTP_PUT = "PUT";

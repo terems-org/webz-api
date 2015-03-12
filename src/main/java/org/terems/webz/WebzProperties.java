@@ -92,7 +92,8 @@ public class WebzProperties extends HashMap<String, String> {
 	public static final String WELCOME_FILENAMES_PROPERTY = "welcome.filenames";
 
 	public static final String MARKDOWN_SUFFIX_PROPERTY = "markdown.suffix";
-	public static final String RENDERING_TEMPLATE_PATHNAME_PROPERTY = "rendering.template.pathname";
+	public static final String MUSTACHE_TEMPLATE_PROPERTY = "mustache.template";
+	public static final String MUSTACHE_RESULTING_MIMETYPE_PROPERTY = "mustache.resulting.mimetype";
 
 	public static final String PATH_TO_404_FILE_PROPERTY = "404";
 	public static final String PATH_TO_500_FILE_PROPERTY = "500";

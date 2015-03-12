@@ -37,9 +37,6 @@ public class GeneralAppConfig extends WebzConfigObject {
 	private Collection<String> welcomeFilenameSuffixesLowerCased;
 	private Collection<String> welcomeFilenamesLowerCased;
 
-	private String markdownSuffixLowerCased;
-	private String renderingTemplatePathname;
-
 	/** TODO !!! describe !!! **/
 	public String getAppDisplayName() {
 		return appDisplayName;
@@ -70,16 +67,6 @@ public class GeneralAppConfig extends WebzConfigObject {
 		return welcomeFilenamesLowerCased;
 	}
 
-	/** TODO !!! describe !!! **/
-	public String getMarkdownSuffixLowerCased() {
-		return markdownSuffixLowerCased;
-	}
-
-	/** TODO !!! describe !!! **/
-	public String getRenderingTemplatePathname() {
-		return renderingTemplatePathname;
-	}
-
 	@Override
 	public void init(WebzFile configFolder) throws WebzException {
 
@@ -98,11 +85,6 @@ public class GeneralAppConfig extends WebzConfigObject {
 				WebzProperties.WELCOME_FILENAME_SUFFIXES_PROPERTY, WebzDefaults.WELCOME_FILENAME_SUFFIXES_LIST));
 		welcomeFilenamesLowerCased = populateLowerCasedWelcomeItems(properties.getProperty(WebzProperties.WELCOME_FILENAMES_PROPERTY,
 				WebzDefaults.WELCOME_FILENAMES_LIST));
-
-		markdownSuffixLowerCased = WebzUtils.toLowerCaseEng(properties.getProperty(WebzProperties.MARKDOWN_SUFFIX_PROPERTY,
-				WebzDefaults.MARKDOWN_SUFFIX));
-		renderingTemplatePathname = properties.getProperty(WebzProperties.RENDERING_TEMPLATE_PATHNAME_PROPERTY,
-				WebzDefaults.RENDERING_TEMPLATE_PATHNAME);
 	}
 
 	private Collection<String> populateLowerCasedWelcomeItems(String welcomeItemsCsv) {

@@ -30,10 +30,11 @@ public class WebzDefaults {
 	public static final boolean USE_PERMANENT_REDIRECTS = false;
 
 	public static final String MARKDOWN_SUFFIX = ".md";
-	public static final String RENDERING_TEMPLATE_PATHNAME = "/index.hbs.html";
+	public static final String MUSTACHE_TEMPLATE = "index.html";
+	public static final String MUSTACHE_RESULTING_MIMETYPE = "text/html";
 
-	public static final String WELCOME_FILENAME_SUFFIXES_LIST = ".html," + MARKDOWN_SUFFIX;
+	public static final String WELCOME_FILENAME_SUFFIXES_LIST = MARKDOWN_SUFFIX + ",.html";
 	public static final String USE_PARENT_FOLDER_NAME = "..";
-	public static final String WELCOME_FILENAMES_LIST = "index,README," + USE_PARENT_FOLDER_NAME;
+	public static final String WELCOME_FILENAMES_LIST = "README," + USE_PARENT_FOLDER_NAME + ",index";
 
 }
