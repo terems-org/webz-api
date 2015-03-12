@@ -62,7 +62,7 @@ public interface WebzFile {
 	public byte[] getFileContent() throws IOException, WebzReadException, WebzWriteException, WebzException;
 
 	/** TODO !!! describe !!! **/
-	public Collection<WebzFile> listChildren() throws IOException, WebzException;
+	public Collection<WebzFile> listChildren(boolean includeHidden) throws IOException, WebzException;
 
 	/** TODO !!! describe !!! **/
 	public WebzMetadata createFolder() throws IOException, WebzException;
