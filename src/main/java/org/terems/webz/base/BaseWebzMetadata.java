@@ -24,6 +24,8 @@ import org.terems.webz.WebzMetadata;
 /** TODO !!! describe !!! **/
 public abstract class BaseWebzMetadata implements WebzMetadata, WebzMetadata.FileSpecific {
 
+	public static final String[] NO_ORIGIN_NAMES = {};
+
 	/** TODO !!! describe !!! **/
 	@Override
 	public String getLinkedPathname() {
@@ -32,8 +34,8 @@ public abstract class BaseWebzMetadata implements WebzMetadata, WebzMetadata.Fil
 
 	/** TODO !!! describe !!! **/
 	@Override
-	public String getFileSourceType() {
-		return FILE_SOURCE_TYPE_UNDEFINED;
+	public String[] getOriginNames() {
+		return NO_ORIGIN_NAMES;
 	}
 
 	/** TODO !!! describe !!! **/

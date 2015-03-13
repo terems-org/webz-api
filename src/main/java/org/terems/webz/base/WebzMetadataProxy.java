@@ -48,8 +48,8 @@ public abstract class WebzMetadataProxy extends BaseWebzMetadata {
 	}
 
 	@Override
-	public String getFileSourceType() {
-		return getInnerMetadata().getFileSourceType();
+	public String[] getOriginNames() {
+		return getInnerMetadata().getOriginNames();
 	}
 
 	@Override

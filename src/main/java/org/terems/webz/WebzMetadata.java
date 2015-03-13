@@ -34,7 +34,7 @@ public interface WebzMetadata {
 	public String getLinkedPathname();
 
 	/** TODO !!! describe !!! **/
-	public String getFileSourceType();
+	public String[] getOriginNames();
 
 	/** TODO !!! describe !!! **/
 	public FileSpecific getFileSpecific() throws IOException, WebzException;
@@ -52,7 +52,5 @@ public interface WebzMetadata {
 		public String getRevision() throws IOException, WebzException;
 
 	}
-
-	public static final String FILE_SOURCE_TYPE_UNDEFINED = "undefined";
 
 }

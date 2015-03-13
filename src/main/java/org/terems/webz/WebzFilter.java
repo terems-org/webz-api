@@ -47,8 +47,8 @@ public interface WebzFilter extends WebzDestroyable {
 	public static final String HEADER_CONTENT_LENGTH = "Content-Length";
 	public static final String HEADER_CONTENT_TYPE = "Content-Type";
 
-	public static final String FILE_SOURCE_TYPE_SITE = "site";
-	public static final String FILE_SOURCE_TYPE_SPA = "spa";
-	public static final String FILE_SOURCE_TYPE_LINKED = "linked";
+	public static final String FILE_ORIGIN_SITE = "site";
+	public static final String FILE_ORIGIN_SPA = "spa";
+	public static final String FILE_ORIGIN_LINKED = "linked";
 
 }
