@@ -48,6 +48,11 @@ public abstract class WebzMetadataProxy extends BaseWebzMetadata {
 	}
 
 	@Override
+	public String getFileSourceType() {
+		return getInnerMetadata().getFileSourceType();
+	}
+
+	@Override
 	public long getNumberOfBytes() throws IOException, WebzException {
 		return getInnerMetadata().getFileSpecific().getNumberOfBytes();
 	}

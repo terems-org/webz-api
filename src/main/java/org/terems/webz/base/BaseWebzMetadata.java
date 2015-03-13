@@ -32,6 +32,12 @@ public abstract class BaseWebzMetadata implements WebzMetadata, WebzMetadata.Fil
 
 	/** TODO !!! describe !!! **/
 	@Override
+	public String getFileSourceType() {
+		return FILE_SOURCE_TYPE_UNDEFINED;
+	}
+
+	/** TODO !!! describe !!! **/
+	@Override
 	public FileSpecific getFileSpecific() throws IOException, WebzException {
 		return isFile() ? this : null;
 	}
