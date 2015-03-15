@@ -34,7 +34,7 @@ public interface WebzMetadata {
 	public String getLinkedPathname();
 
 	/** TODO !!! describe !!! **/
-	public String[] getOriginTypes();
+	public String[] getOrigins();
 
 	/** TODO !!! describe !!! **/
 	public FileSpecific getFileSpecific() throws IOException, WebzException;
