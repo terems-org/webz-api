@@ -32,7 +32,7 @@ public class GeneralAppConfig extends WebzConfigObject {
 	private String appDisplayName;
 	private String defaultMimetype;
 	private String defaultEncoding;
-	private boolean usePermanentRedirects;
+	private boolean welcomeRedirectsPermanent;
 
 	private Collection<String> welcomeFilenameSuffixesLowerCased;
 	private Collection<String> welcomeFilenamesLowerCased;
@@ -53,8 +53,8 @@ public class GeneralAppConfig extends WebzConfigObject {
 	}
 
 	/** TODO !!! describe !!! **/
-	public boolean isUsePermanentRedirects() {
-		return usePermanentRedirects;
+	public boolean isWelcomeRedirectsPermanent() {
+		return welcomeRedirectsPermanent;
 	}
 
 	/** TODO !!! describe !!! **/
@@ -78,8 +78,8 @@ public class GeneralAppConfig extends WebzConfigObject {
 		appDisplayName = properties.getProperty(WebzProperties.APP_DISPLAY_NAME_PROPERTY);
 		defaultMimetype = properties.getProperty(WebzProperties.DEFAULT_MIMETYPE_PROPERTY, WebzDefaults.MIMETYPE);
 		defaultEncoding = properties.getProperty(WebzProperties.DEFAULT_ENCODING_PROPERTY, WebzDefaults.ENCODING);
-		usePermanentRedirects = Boolean.valueOf(properties.getProperty(WebzProperties.USE_PERMANENT_REDIRECTS_PROPERTY,
-				String.valueOf(WebzDefaults.USE_PERMANENT_REDIRECTS)));
+		welcomeRedirectsPermanent = Boolean.valueOf(properties.getProperty(WebzProperties.WELCOME_REDIRECTS_PERMANENT_PROPERTY,
+				String.valueOf(WebzDefaults.WELCOME_REDIRECTS_PERMANENT)));
 
 		welcomeFilenameSuffixesLowerCased = populateLowerCasedWelcomeItems(properties.getProperty(
 				WebzProperties.WELCOME_FILENAME_SUFFIXES_PROPERTY, WebzDefaults.WELCOME_FILENAME_SUFFIXES_LIST));

@@ -27,7 +27,9 @@ public class WebzDefaults {
 
 	public static final String MIMETYPE = "application/octet-stream";
 	public static final String ENCODING = "UTF-8"; // ByteOrderMark.UTF_8.getCharsetName();
-	public static final boolean USE_PERMANENT_REDIRECTS = false;
+
+	public static final boolean WELCOME_REDIRECTS_PERMANENT = false;
+	public static final boolean FORCED_REDIRECTS_PERMANENT = true;
 
 	public static final String MARKDOWN_SUFFIX = ".md";
 	public static final String MUSTACHE_TEMPLATE = "index.html";

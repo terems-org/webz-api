@@ -33,6 +33,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.terems.webz.WebzException;
 import org.terems.webz.WebzFile;
 import org.terems.webz.WebzFileDownloader;
+import org.terems.webz.WebzFilter;
 import org.terems.webz.WebzIdentifiable;
 import org.terems.webz.WebzMetadata;
 import org.terems.webz.WebzReadException;
@@ -295,6 +296,18 @@ public class WebzUtils {
 
 		resp.addHeader("Content-Length", Long.toString(contentLength));
 		// with Servlet API 3.1 it could be: resp.setContentLengthLong(contentLength);
+	}
+
+	/** TODO !!! describe !!! **/
+	public static void doRedirect(HttpServletResponse resp, String redirectUrl, boolean permanent, boolean methodHead) throws IOException {
+
+		resp.setStatus(permanent ? HttpServletResponse.SC_MOVED_PERMANENTLY : HttpServletResponse.SC_MOVED_TEMPORARILY);
+		resp.setHeader(WebzFilter.HEADER_LOCATION, redirectUrl);
+
+		if (!methodHead) {
+			resp.getWriter().write("Redirect to " + redirectUrl);
+		}
+		resp.flushBuffer();
 	}
 
 	/** TODO !!! describe !!! **/

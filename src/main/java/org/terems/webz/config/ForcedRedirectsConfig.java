@@ -16,6 +16,7 @@
 
 package org.terems.webz.config;
 
+import java.util.Map;
 import java.util.Properties;
 
 import org.terems.webz.WebzDefaults;
@@ -25,25 +26,26 @@ import org.terems.webz.WebzProperties;
 import org.terems.webz.util.WebzUtils;
 
 /** TODO !!! describe !!! **/
-public class MarkdownForSpaConfig extends WebzConfigObject {
+public class ForcedRedirectsConfig extends WebzConfigObject {
 
-	private String markdownSuffixLowerCased;
-	private String mustacheTemplate;
-	private String mustacheResultingMimetype;
+	private String forcedRedirectsQueryParam;
+	private boolean forcedRedirectsPermanent;
+
+	private WebzProperties forcedRedirectsUrlPatterns = new WebzProperties();
 
 	/** TODO !!! describe !!! **/
-	public String getMarkdownSuffixLowerCased() {
-		return markdownSuffixLowerCased;
+	public String getForcedRedirectsQueryParam() {
+		return forcedRedirectsQueryParam;
 	}
 
 	/** TODO !!! describe !!! **/
-	public String getMustacheTemplate() {
-		return mustacheTemplate;
+	public boolean isForcedRedirectsPermanent() {
+		return forcedRedirectsPermanent;
 	}
 
 	/** TODO !!! describe !!! **/
-	public String getMustacheResultingMimetype() {
-		return mustacheResultingMimetype;
+	public String getForcedRedirectsUrlPattern(String queryParamValue) {
+		return forcedRedirectsUrlPatterns.get(queryParamValue);
 	}
 
 	@Override
@@ -54,11 +56,19 @@ public class MarkdownForSpaConfig extends WebzConfigObject {
 		Properties properties = new Properties();
 		WebzUtils.loadProperties(properties, file, false);
 
-		markdownSuffixLowerCased = WebzUtils.toLowerCaseEng(properties.getProperty(WebzProperties.MARKDOWN_SUFFIX_PROPERTY,
-				WebzDefaults.MARKDOWN_SUFFIX));
-		mustacheTemplate = properties.getProperty(WebzProperties.MUSTACHE_TEMPLATE_PROPERTY, WebzDefaults.MUSTACHE_TEMPLATE);
-		mustacheResultingMimetype = properties.getProperty(WebzProperties.MUSTACHE_RESULTING_MIMETYPE_PROPERTY,
-				WebzDefaults.MUSTACHE_RESULTING_MIMETYPE);
+		forcedRedirectsQueryParam = properties.getProperty(WebzProperties.FORCED_REDIRECTS_QUERY_PARAM_PROPERTY);
+		forcedRedirectsPermanent = Boolean.valueOf(properties.getProperty(WebzProperties.FORCED_REDIRECTS_PERMANENT_PROPERTY,
+				String.valueOf(WebzDefaults.FORCED_REDIRECTS_PERMANENT)));
+
+		for (Map.Entry<Object, Object> entry : properties.entrySet()) {
+
+			String key = WebzUtils.assertString(entry.getKey());
+			if (key.startsWith(WebzProperties.FORCED_REDIRECTS_URL_PATTERN_FOR_PROPERTY_PREFIX)) {
+
+				key = key.substring(WebzProperties.FORCED_REDIRECTS_URL_PATTERN_FOR_PROPERTY_PREFIX.length());
+				forcedRedirectsUrlPatterns.put(key, WebzUtils.assertString(entry.getValue()));
+			}
+		}
 	}
 
 }
