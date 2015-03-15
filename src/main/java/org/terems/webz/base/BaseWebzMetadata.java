@@ -24,7 +24,7 @@ import org.terems.webz.WebzMetadata;
 /** TODO !!! describe !!! **/
 public abstract class BaseWebzMetadata implements WebzMetadata, WebzMetadata.FileSpecific {
 
-	public static final String[] NO_ORIGIN_NAMES = {};
+	public static final String[] NO_ORIGIN_TYPES = {};
 
 	/** TODO !!! describe !!! **/
 	@Override
@@ -34,8 +34,8 @@ public abstract class BaseWebzMetadata implements WebzMetadata, WebzMetadata.Fil
 
 	/** TODO !!! describe !!! **/
 	@Override
-	public String[] getOriginNames() {
-		return NO_ORIGIN_NAMES;
+	public String[] getOriginTypes() {
+		return NO_ORIGIN_TYPES;
 	}
 
 	/** TODO !!! describe !!! **/

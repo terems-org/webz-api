@@ -48,8 +48,8 @@ public abstract class WebzMetadataProxy extends BaseWebzMetadata {
 	}
 
 	@Override
-	public String[] getOriginNames() {
-		return getInnerMetadata().getOriginNames();
+	public String[] getOriginTypes() {
+		return getInnerMetadata().getOriginTypes();
 	}
 
 	@Override
