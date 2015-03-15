@@ -26,7 +26,7 @@ public class WebzDefaults {
 	public static final int FS_CACHE_PAYLOAD_THRESHOLD_BYTES = 262144;
 
 	public static final String MIMETYPE = "application/octet-stream";
-	public static final String ENCODING = "UTF-8"; // ByteOrderMark.UTF_8.getCharsetName();
+	public static final String UTF8 = "UTF-8"; // ByteOrderMark.UTF_8.getCharsetName();
 
 	public static final boolean WELCOME_REDIRECTS_PERMANENT = false;
 	public static final boolean FORCED_REDIRECTS_PERMANENT = true;
