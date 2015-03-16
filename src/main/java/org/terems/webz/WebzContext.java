@@ -30,6 +30,6 @@ public interface WebzContext {
 	public WebzFile getFile(String pathInfo) throws IOException, WebzException;
 
 	/** TODO !!! describe !!! **/
-	public String resolveUri(WebzFile file);
+	public String resolveUri(WebzFile file, HttpServletRequest req) throws IOException, WebzException;
 
 }

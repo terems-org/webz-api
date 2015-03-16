@@ -41,8 +41,8 @@ public abstract class WebzContextProxy implements WebzContext {
 	}
 
 	@Override
-	public String resolveUri(WebzFile file) {
-		return getInnerContext().resolveUri(file);
+	public String resolveUri(WebzFile file, HttpServletRequest req) throws IOException, WebzException {
+		return getInnerContext().resolveUri(file, req);
 	}
 
 }

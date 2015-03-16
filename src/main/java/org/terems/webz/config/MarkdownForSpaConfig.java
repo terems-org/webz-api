@@ -16,6 +16,7 @@
 
 package org.terems.webz.config;
 
+import java.io.IOException;
 import java.util.Properties;
 
 import org.terems.webz.WebzDefaults;
@@ -47,7 +48,7 @@ public class MarkdownForSpaConfig extends WebzConfigObject {
 	}
 
 	@Override
-	public void init(WebzFile configFolder) throws WebzException {
+	public void init(WebzFile configFolder) throws IOException, WebzException {
 
 		WebzFile file = configFolder.getDescendant(WebzProperties.GENERAL_PROPERTIES_FILE);
 

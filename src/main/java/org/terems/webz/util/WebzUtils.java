@@ -104,7 +104,7 @@ public class WebzUtils {
 			try {
 				resource.close();
 			} catch (IOException e) {
-				// ignoring...
+				// ignore
 			}
 		}
 	}
@@ -130,13 +130,13 @@ public class WebzUtils {
 
 	/** TODO !!! describe !!! **/
 	public static boolean loadPropertiesFromClasspath(Properties properties, String resourceName, boolean failIfNotFound)
-			throws WebzException {
+			throws IOException, WebzException {
 		return loadPropertiesFromClasspath(properties, resourceName, DEFAULT_CLASS_LOADER, failIfNotFound);
 	}
 
 	/** TODO !!! describe !!! **/
 	public static boolean loadPropertiesFromClasspath(Properties properties, String resourceName, ClassLoader classLoader,
-			boolean failIfNotFound) throws WebzException {
+			boolean failIfNotFound) throws IOException, WebzException {
 
 		if (resourceName == null) {
 			throw new NullPointerException("null resource name was supplied - properties cannot be read");
@@ -152,9 +152,6 @@ public class WebzUtils {
 			}
 			properties.load(in);
 
-		} catch (IOException e) {
-			throw new WebzException("failed to read '" + resourceName + "' from classpath: " + e.getMessage(), e);
-
 		} finally {
 			closeSafely(in);
 		}
@@ -162,7 +159,7 @@ public class WebzUtils {
 	}
 
 	/** TODO !!! describe !!! **/
-	public static boolean loadProperties(Properties properties, WebzFile file, boolean failIfNotFound) throws WebzException {
+	public static boolean loadProperties(Properties properties, WebzFile file, boolean failIfNotFound) throws IOException, WebzException {
 
 		if (file == null) {
 			throw new NullPointerException("null WebzFile was supplied - properties cannot be read");
@@ -180,9 +177,6 @@ public class WebzUtils {
 			}
 			properties.load(fileDownloader.content);
 
-		} catch (IOException e) {
-			throw new WebzException("failed to read '" + file.getPathname() + "': " + e.getMessage(), e);
-
 		} finally {
 			if (fileDownloader != null) {
 				fileDownloader.close();
@@ -192,18 +186,14 @@ public class WebzUtils {
 	}
 
 	/** TODO !!! describe !!! **/
-	public static String getFileExtension(WebzMetadata metadata) throws WebzException {
+	public static String getFileExtension(WebzMetadata metadata) throws IOException, WebzException {
 
 		if (metadata != null) {
-			try {
-				String fileName = metadata.getName();
-				int i = fileName.lastIndexOf(FILE_EXT_SEPARATOR);
+			String fileName = metadata.getName();
+			int i = fileName.lastIndexOf(FILE_EXT_SEPARATOR);
 
-				if (i > -1) {
-					return fileName.substring(i + 1);
-				}
-			} catch (IOException e) {
-				throw new WebzException(e);
+			if (i > -1) {
+				return fileName.substring(i + 1);
 			}
 		}
 		return null;

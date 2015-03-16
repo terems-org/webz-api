@@ -16,6 +16,7 @@
 
 package org.terems.webz.config;
 
+import java.io.IOException;
 import java.util.Properties;
 
 import org.terems.webz.WebzException;
@@ -40,7 +41,7 @@ public class StatusCodesConfig extends WebzConfigObject {
 	}
 
 	@Override
-	public void init(WebzFile configFolder) throws WebzException {
+	public void init(WebzFile configFolder) throws IOException, WebzException {
 
 		WebzFile file = configFolder.getDescendant(WebzProperties.STATUS_CODES_PROPERTIES_FILE);
 

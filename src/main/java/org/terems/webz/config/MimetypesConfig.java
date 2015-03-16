@@ -16,6 +16,7 @@
 
 package org.terems.webz.config;
 
+import java.io.IOException;
 import java.util.Map;
 import java.util.Properties;
 
@@ -33,7 +34,7 @@ public class MimetypesConfig extends WebzConfigObject {
 	private WebzProperties mimetypes = new WebzProperties();
 
 	/** TODO !!! describe !!! **/
-	public String getMimetype(WebzMetadata metadata, String defaultMimetype) throws WebzException {
+	public String getMimetype(WebzMetadata metadata, String defaultMimetype) throws IOException, WebzException {
 
 		String fileExtension = WebzUtils.getFileExtension(metadata);
 
@@ -44,7 +45,7 @@ public class MimetypesConfig extends WebzConfigObject {
 	}
 
 	@Override
-	public void init(WebzFile configFolder) throws WebzException {
+	public void init(WebzFile configFolder) throws IOException, WebzException {
 
 		WebzFile file = configFolder.getDescendant(WebzProperties.MIMETYPES_PROPERTIES_FILE);
 

@@ -16,9 +16,11 @@
 
 package org.terems.webz;
 
+import java.io.IOException;
+
 /** TODO !!! describe !!! **/
 @SuppressWarnings("serial")
-public class WebzWriteException extends WebzIOException {
+public class WebzWriteException extends IOException {
 
 	public WebzWriteException() {
 		super();
