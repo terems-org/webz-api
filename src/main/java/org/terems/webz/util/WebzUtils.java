@@ -36,6 +36,7 @@ import org.terems.webz.WebzFileDownloader;
 import org.terems.webz.WebzFilter;
 import org.terems.webz.WebzIdentifiable;
 import org.terems.webz.WebzMetadata;
+import org.terems.webz.WebzProperties;
 import org.terems.webz.WebzReadException;
 import org.terems.webz.WebzWriteException;
 import org.terems.webz.base.BaseWebzFilter;
@@ -298,6 +299,14 @@ public class WebzUtils {
 			resp.getWriter().write("Redirect to " + redirectUrl);
 		}
 		resp.flushBuffer();
+	}
+
+	/** TODO !!! describe !!! **/
+	public static String fetchLocalStorageBasePath(WebzProperties properties) {
+
+		String localStorageBasePathEnvVar = properties.get(WebzProperties.LOCAL_STORAGE_BASE_PATH_ENV_VAR_PROPERTY);
+		return localStorageBasePathEnvVar == null ? properties.get(WebzProperties.LOCAL_STORAGE_BASE_PATH_PROPERTY) : System
+				.getenv(localStorageBasePathEnvVar);
 	}
 
 	/** TODO !!! describe !!! **/
