@@ -64,6 +64,9 @@ public class WebzProperties extends HashMap<String, String> {
 	}
 
 	public static final String WEBZ_CONFIG_FOLDER = ".webz";
+	public static final String WEBZ_JS_LIBS_FOLDER = "webz-js-libs";
+	public static final String JS_TXT_FILE = "js.txt";
+	public static final String WEBZ_TEMPLATE_ADAPTER_JS_FILE = "webz-template-adapter.js";
 
 	public static final String GENERAL_PROPERTIES_FILE = "general.properties";
 	public static final String STATUS_CODES_PROPERTIES_FILE = "status-codes.properties";
@@ -92,8 +95,8 @@ public class WebzProperties extends HashMap<String, String> {
 	public static final String WELCOME_FILENAMES_PROPERTY = "welcome.filenames";
 
 	public static final String MARKDOWN_SUFFIX_PROPERTY = "markdown.suffix";
-	public static final String MUSTACHE_TEMPLATE_PROPERTY = "mustache.template";
-	public static final String MUSTACHE_RESULTING_MIMETYPE_PROPERTY = "mustache.resulting.mimetype";
+	public static final String CONTENT_TEMPLATE_PROPERTY = "content.template";
+	public static final String RESULTING_CONTENT_MIMETYPE_PROPERTY = "resulting.content.mimetype";
 
 	public static final String PATH_TO_404_FILE_PROPERTY = "404";
 	public static final String PATH_TO_500_FILE_PROPERTY = "500";

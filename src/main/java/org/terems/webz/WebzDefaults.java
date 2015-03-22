@@ -32,8 +32,8 @@ public class WebzDefaults {
 	public static final boolean FORCED_REDIRECTS_PERMANENT = true;
 
 	public static final String MARKDOWN_SUFFIX = ".md";
-	public static final String MUSTACHE_TEMPLATE = "index.html";
-	public static final String MUSTACHE_RESULTING_MIMETYPE = "text/html";
+	public static final String CONTENT_TEMPLATE = "index.html";
+	public static final String RESULTING_CONTENT_MIMETYPE = "text/html";
 
 	public static final String WELCOME_FILENAME_SUFFIXES_LIST = MARKDOWN_SUFFIX + ",.html";
 	public static final String USE_PARENT_FOLDER_NAME = "..";

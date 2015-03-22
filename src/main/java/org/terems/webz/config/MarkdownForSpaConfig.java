@@ -29,8 +29,8 @@ import org.terems.webz.util.WebzUtils;
 public class MarkdownForSpaConfig extends WebzConfigObject {
 
 	private String markdownSuffixLowerCased;
-	private String mustacheTemplate;
-	private String mustacheResultingMimetype;
+	private String contentTemplate;
+	private String resultingContentMimetype;
 
 	/** TODO !!! describe !!! **/
 	public String getMarkdownSuffixLowerCased() {
@@ -38,13 +38,13 @@ public class MarkdownForSpaConfig extends WebzConfigObject {
 	}
 
 	/** TODO !!! describe !!! **/
-	public String getMustacheTemplate() {
-		return mustacheTemplate;
+	public String getContentTemplate() {
+		return contentTemplate;
 	}
 
 	/** TODO !!! describe !!! **/
-	public String getMustacheResultingMimetype() {
-		return mustacheResultingMimetype;
+	public String getResultingContentMimetype() {
+		return resultingContentMimetype;
 	}
 
 	@Override
@@ -57,9 +57,9 @@ public class MarkdownForSpaConfig extends WebzConfigObject {
 
 		markdownSuffixLowerCased = WebzUtils.toLowerCaseEng(properties.getProperty(WebzProperties.MARKDOWN_SUFFIX_PROPERTY,
 				WebzDefaults.MARKDOWN_SUFFIX));
-		mustacheTemplate = properties.getProperty(WebzProperties.MUSTACHE_TEMPLATE_PROPERTY, WebzDefaults.MUSTACHE_TEMPLATE);
-		mustacheResultingMimetype = properties.getProperty(WebzProperties.MUSTACHE_RESULTING_MIMETYPE_PROPERTY,
-				WebzDefaults.MUSTACHE_RESULTING_MIMETYPE);
+		contentTemplate = properties.getProperty(WebzProperties.CONTENT_TEMPLATE_PROPERTY, WebzDefaults.CONTENT_TEMPLATE);
+		resultingContentMimetype = properties.getProperty(WebzProperties.RESULTING_CONTENT_MIMETYPE_PROPERTY,
+				WebzDefaults.RESULTING_CONTENT_MIMETYPE);
 	}
 
 }
