@@ -31,11 +31,11 @@ public class WebzDefaults {
 	public static final boolean WELCOME_REDIRECTS_PERMANENT = false;
 	public static final boolean FORCED_REDIRECTS_PERMANENT = true;
 
-	public static final String MARKDOWN_SUFFIX = ".md";
-	public static final String CONTENT_TEMPLATE = "index.html";
-	public static final String RESULTING_CONTENT_MIMETYPE = "text/html";
+	public static final String JS_ENGINE_FILTER_FILE_SUFFIXES = ".md";
+	public static final boolean JS_ENGINE_FILTER_PROCESS_FOLDERS = false;
+	public static final String JS_ENGINE_FILTER_RESULTING_MIMETYPE = "text/html";
 
-	public static final String WELCOME_FILENAME_SUFFIXES_LIST = MARKDOWN_SUFFIX + ",.html";
+	public static final String WELCOME_FILENAME_SUFFIXES_LIST = JS_ENGINE_FILTER_FILE_SUFFIXES + ",.html";
 	public static final String USE_PARENT_FOLDER_NAME = "..";
 	public static final String WELCOME_FILENAMES_LIST = "README," + USE_PARENT_FOLDER_NAME + ",index";
 

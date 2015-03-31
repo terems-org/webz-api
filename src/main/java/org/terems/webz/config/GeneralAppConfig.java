@@ -17,9 +17,8 @@
 package org.terems.webz.config;
 
 import java.io.IOException;
-import java.util.Collection;
-import java.util.LinkedHashSet;
 import java.util.Properties;
+import java.util.Set;
 
 import org.terems.webz.WebzDefaults;
 import org.terems.webz.WebzException;
@@ -35,8 +34,8 @@ public class GeneralAppConfig extends WebzConfigObject {
 	private String defaultEncoding;
 	private boolean welcomeRedirectsPermanent;
 
-	private Collection<String> welcomeFilenameSuffixesLowerCased;
-	private Collection<String> welcomeFilenamesLowerCased;
+	private Set<String> welcomeFilenameSuffixesLowerCased;
+	private Set<String> welcomeFilenamesLowerCased;
 
 	/** TODO !!! describe !!! **/
 	public String getAppDisplayName() {
@@ -59,12 +58,12 @@ public class GeneralAppConfig extends WebzConfigObject {
 	}
 
 	/** TODO !!! describe !!! **/
-	public Collection<String> getWelcomeFilenameSuffixesLowerCased() {
+	public Set<String> getWelcomeFilenameSuffixesLowerCased() {
 		return welcomeFilenameSuffixesLowerCased;
 	}
 
 	/** TODO !!! describe !!! **/
-	public Collection<String> getWelcomeFilenamesLowerCased() {
+	public Set<String> getWelcomeFilenamesLowerCased() {
 		return welcomeFilenamesLowerCased;
 	}
 
@@ -82,20 +81,10 @@ public class GeneralAppConfig extends WebzConfigObject {
 		welcomeRedirectsPermanent = Boolean.valueOf(properties.getProperty(WebzProperties.WELCOME_REDIRECTS_PERMANENT_PROPERTY,
 				String.valueOf(WebzDefaults.WELCOME_REDIRECTS_PERMANENT)));
 
-		welcomeFilenameSuffixesLowerCased = populateLowerCasedWelcomeItems(properties.getProperty(
+		welcomeFilenameSuffixesLowerCased = WebzUtils.parseCsvAsLowerCasedSet(properties.getProperty(
 				WebzProperties.WELCOME_FILENAME_SUFFIXES_PROPERTY, WebzDefaults.WELCOME_FILENAME_SUFFIXES_LIST));
-		welcomeFilenamesLowerCased = populateLowerCasedWelcomeItems(properties.getProperty(WebzProperties.WELCOME_FILENAMES_PROPERTY,
+		welcomeFilenamesLowerCased = WebzUtils.parseCsvAsLowerCasedSet(properties.getProperty(WebzProperties.WELCOME_FILENAMES_PROPERTY,
 				WebzDefaults.WELCOME_FILENAMES_LIST));
-	}
-
-	private Collection<String> populateLowerCasedWelcomeItems(String welcomeItemsCsv) {
-
-		Collection<String> result = new LinkedHashSet<String>();
-
-		for (String item : WebzUtils.parseCsv(welcomeItemsCsv)) {
-			result.add(WebzUtils.toLowerCaseEng(item));
-		}
-		return result;
 	}
 
 }

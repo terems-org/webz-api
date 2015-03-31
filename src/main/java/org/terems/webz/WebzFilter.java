@@ -25,7 +25,7 @@ import javax.servlet.http.HttpServletResponse;
 public interface WebzFilter extends WebzDestroyable {
 
 	/** TODO !!! describe !!! **/
-	public void init(WebzConfig appConfig) throws WebzException;
+	public void init(WebzConfig appConfig, WebzContext context) throws IOException, WebzException;
 
 	/** TODO !!! describe !!! **/
 	public void serve(HttpServletRequest req, HttpServletResponse resp, WebzChainContext chainContext) throws IOException, WebzException;

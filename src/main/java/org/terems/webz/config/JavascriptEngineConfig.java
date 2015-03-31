@@ -18,6 +18,7 @@ package org.terems.webz.config;
 
 import java.io.IOException;
 import java.util.Properties;
+import java.util.Set;
 
 import org.terems.webz.WebzDefaults;
 import org.terems.webz.WebzException;
@@ -26,25 +27,25 @@ import org.terems.webz.WebzProperties;
 import org.terems.webz.util.WebzUtils;
 
 /** TODO !!! describe !!! **/
-public class MarkdownForSpaConfig extends WebzConfigObject {
+public class JavascriptEngineConfig extends WebzConfigObject {
 
-	private String markdownSuffixLowerCased;
-	private String contentTemplate;
-	private String resultingContentMimetype;
+	private Set<String> fileSuffixesLowerCased;
+	private boolean processFolders;
+	private String resultingMimetype;
 
 	/** TODO !!! describe !!! **/
-	public String getMarkdownSuffixLowerCased() {
-		return markdownSuffixLowerCased;
+	public Set<String> getFileSuffixesLowerCased() {
+		return fileSuffixesLowerCased;
 	}
 
 	/** TODO !!! describe !!! **/
-	public String getContentTemplate() {
-		return contentTemplate;
+	public boolean getProcessFolders() {
+		return processFolders;
 	}
 
 	/** TODO !!! describe !!! **/
-	public String getResultingContentMimetype() {
-		return resultingContentMimetype;
+	public String getResultingMimetype() {
+		return resultingMimetype;
 	}
 
 	@Override
@@ -55,11 +56,12 @@ public class MarkdownForSpaConfig extends WebzConfigObject {
 		Properties properties = new Properties();
 		WebzUtils.loadProperties(properties, file, false);
 
-		markdownSuffixLowerCased = WebzUtils.toLowerCaseEng(properties.getProperty(WebzProperties.MARKDOWN_SUFFIX_PROPERTY,
-				WebzDefaults.MARKDOWN_SUFFIX));
-		contentTemplate = properties.getProperty(WebzProperties.CONTENT_TEMPLATE_PROPERTY, WebzDefaults.CONTENT_TEMPLATE);
-		resultingContentMimetype = properties.getProperty(WebzProperties.RESULTING_CONTENT_MIMETYPE_PROPERTY,
-				WebzDefaults.RESULTING_CONTENT_MIMETYPE);
+		fileSuffixesLowerCased = WebzUtils.parseCsvAsLowerCasedSet(properties.getProperty(
+				WebzProperties.JS_ENGINE_FILTER_FILE_SUFFIXES_PROPERTY, WebzDefaults.JS_ENGINE_FILTER_FILE_SUFFIXES));
+		processFolders = Boolean.valueOf(properties.getProperty(WebzProperties.JS_ENGINE_FILTER_PROCESS_FOLDERS_PROPERTY,
+				String.valueOf(WebzDefaults.JS_ENGINE_FILTER_PROCESS_FOLDERS)));
+		resultingMimetype = properties.getProperty(WebzProperties.JS_ENGINE_FILTER_RESULTING_MIMETYPE_PROPERTY,
+				WebzDefaults.JS_ENGINE_FILTER_RESULTING_MIMETYPE);
 	}
 
 }

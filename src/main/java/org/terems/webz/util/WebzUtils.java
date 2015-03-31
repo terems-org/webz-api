@@ -23,8 +23,10 @@ import java.io.OutputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.LinkedHashSet;
 import java.util.Locale;
 import java.util.Properties;
+import java.util.Set;
 import java.util.TimeZone;
 
 import javax.servlet.http.HttpServletRequest;
@@ -267,6 +269,17 @@ public class WebzUtils {
 		}
 		// TODO support proper csv unescaping
 		return csv.split("\\s*,\\s*");
+	}
+
+	/** TODO !!! describe !!! **/
+	public static Set<String> parseCsvAsLowerCasedSet(String csv) {
+
+		Set<String> result = new LinkedHashSet<String>();
+
+		for (String item : parseCsv(csv)) {
+			result.add(toLowerCaseEng(item));
+		}
+		return result;
 	}
 
 	/** TODO !!! describe !!! **/

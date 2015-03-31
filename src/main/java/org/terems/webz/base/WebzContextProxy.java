@@ -28,21 +28,21 @@ import org.terems.webz.WebzFile;
 public abstract class WebzContextProxy implements WebzContext {
 
 	/** TODO !!! describe !!! **/
-	protected abstract WebzContext getInnerContext();
+	protected abstract WebzContext getInternalContext();
 
 	@Override
 	public WebzFile resolveFile(HttpServletRequest req) throws IOException, WebzException {
-		return getInnerContext().resolveFile(req);
+		return getInternalContext().resolveFile(req);
 	}
 
 	@Override
 	public WebzFile getFile(String pathInfo) throws IOException, WebzException {
-		return getInnerContext().getFile(pathInfo);
+		return getInternalContext().getFile(pathInfo);
 	}
 
 	@Override
 	public String resolveUri(WebzFile file, HttpServletRequest req) throws IOException, WebzException {
-		return getInnerContext().resolveUri(file, req);
+		return getInternalContext().resolveUri(file, req);
 	}
 
 }

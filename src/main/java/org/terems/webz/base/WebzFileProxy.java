@@ -17,7 +17,6 @@
 package org.terems.webz.base;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Collection;
 
@@ -34,117 +33,72 @@ import org.terems.webz.WebzWriteException;
 public abstract class WebzFileProxy implements WebzFile {
 
 	/** TODO !!! describe !!! **/
-	protected abstract WebzFile getInnerFile();
+	protected abstract WebzFile getInternalFile();
 
 	@Override
 	public String getPathname() {
-		return getInnerFile().getPathname();
+		return getInternalFile().getPathname();
 	}
 
 	@Override
 	public boolean isPathnameInvalid() {
-		return getInnerFile().isPathnameInvalid();
+		return getInternalFile().isPathnameInvalid();
 	}
 
 	@Override
 	public boolean isHidden() throws WebzPathnameException {
-		return getInnerFile().isHidden();
+		return getInternalFile().isHidden();
 	}
 
 	@Override
 	public WebzFile getParent() throws WebzPathnameException {
-		return getInnerFile().getParent();
+		return getInternalFile().getParent();
 	}
 
 	@Override
 	public WebzFile getDescendant(String relativePathname) throws WebzPathnameException {
-		return getInnerFile().getDescendant(relativePathname);
+		return getInternalFile().getDescendant(relativePathname);
 	}
 
 	@Override
 	public boolean belongsToSubtree(WebzFile subtree) throws WebzPathnameException {
-		return getInnerFile().belongsToSubtree(subtree);
+		return getInternalFile().belongsToSubtree(subtree);
 	}
 
 	@Override
 	public boolean belongsToSubtree(String subtreePath) throws WebzPathnameException {
-		return getInnerFile().belongsToSubtree(subtreePath);
+		return getInternalFile().belongsToSubtree(subtreePath);
 	}
 
 	@Override
 	public void inflate() throws IOException, WebzException {
-		getInnerFile().inflate();
+		getInternalFile().inflate();
 	}
 
 	@Override
 	public WebzMetadata getMetadata() throws IOException, WebzException {
-		return getInnerFile().getMetadata();
+		return getInternalFile().getMetadata();
 	}
 
 	@Override
 	public WebzFileDownloader getFileDownloader() throws IOException, WebzException {
-		return getInnerFile().getFileDownloader();
+		return getInternalFile().getFileDownloader();
 	}
 
 	@Override
 	public FileSpecific copyContentToOutputStream(OutputStream out) throws IOException, WebzReadException, WebzWriteException,
 			WebzException {
-		return getInnerFile().copyContentToOutputStream(out);
+		return getInternalFile().copyContentToOutputStream(out);
 	}
 
 	@Override
 	public byte[] getFileContent() throws IOException, WebzReadException, WebzWriteException, WebzException {
-		return getInnerFile().getFileContent();
+		return getInternalFile().getFileContent();
 	}
 
 	@Override
 	public Collection<WebzFile> listChildren(boolean includeHidden) throws IOException, WebzException {
-		return getInnerFile().listChildren(includeHidden);
-	}
-
-	@Override
-	public WebzMetadata createFolder() throws IOException, WebzException {
-		return getInnerFile().createFolder();
-	}
-
-	@Override
-	public WebzMetadata uploadFile(InputStream content, long numBytes) throws IOException, WebzException {
-		return getInnerFile().uploadFile(content, numBytes);
-	}
-
-	@Override
-	public WebzMetadata uploadFile(InputStream content) throws IOException, WebzException {
-		return getInnerFile().uploadFile(content);
-	}
-
-	@Override
-	public WebzMetadata uploadFile(byte[] content) throws IOException, WebzException {
-		return getInnerFile().uploadFile(content);
-	}
-
-	@Override
-	public WebzMetadata move(WebzFile destFile) throws IOException, WebzException {
-		return getInnerFile().move(destFile);
-	}
-
-	@Override
-	public WebzMetadata copy(WebzFile destFile) throws IOException, WebzException {
-		return getInnerFile().copy(destFile);
-	}
-
-	@Override
-	public WebzMetadata move(String destPathname) throws IOException, WebzException {
-		return getInnerFile().move(destPathname);
-	}
-
-	@Override
-	public WebzMetadata copy(String destPathname) throws IOException, WebzException {
-		return getInnerFile().copy(destPathname);
-	}
-
-	@Override
-	public void delete() throws IOException, WebzException {
-		getInnerFile().delete();
+		return getInternalFile().listChildren(includeHidden);
 	}
 
 }

@@ -25,46 +25,46 @@ import org.terems.webz.WebzMetadata;
 public abstract class WebzMetadataProxy extends BaseWebzMetadata {
 
 	/** TODO !!! describe !!! **/
-	protected abstract WebzMetadata getInnerMetadata();
+	protected abstract WebzMetadata getInternalMetadata();
 
 	@Override
 	public String getName() throws IOException, WebzException {
-		return getInnerMetadata().getName();
+		return getInternalMetadata().getName();
 	}
 
 	@Override
 	public boolean isFile() throws IOException, WebzException {
-		return getInnerMetadata().isFile();
+		return getInternalMetadata().isFile();
 	}
 
 	@Override
 	public boolean isFolder() throws IOException, WebzException {
-		return getInnerMetadata().isFolder();
+		return getInternalMetadata().isFolder();
 	}
 
 	@Override
 	public String getLinkedPathname() {
-		return getInnerMetadata().getLinkedPathname();
+		return getInternalMetadata().getLinkedPathname();
 	}
 
 	@Override
 	public String[] getOrigins() {
-		return getInnerMetadata().getOrigins();
+		return getInternalMetadata().getOrigins();
 	}
 
 	@Override
 	public long getNumberOfBytes() throws IOException, WebzException {
-		return getInnerMetadata().getFileSpecific().getNumberOfBytes();
+		return getInternalMetadata().getFileSpecific().getNumberOfBytes();
 	}
 
 	@Override
 	public Long getLastModified() throws IOException, WebzException {
-		return getInnerMetadata().getFileSpecific().getLastModified();
+		return getInternalMetadata().getFileSpecific().getLastModified();
 	}
 
 	@Override
 	public String getRevision() throws IOException, WebzException {
-		return getInnerMetadata().getFileSpecific().getRevision();
+		return getInternalMetadata().getFileSpecific().getRevision();
 	}
 
 }
