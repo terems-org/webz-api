@@ -30,4 +30,12 @@ public interface WebzChainContext extends WebzContext {
 	/** TODO !!! describe !!! **/
 	public void nextPlease(HttpServletRequest req, HttpServletResponse resp, WebzContext contextWrapper) throws IOException, WebzException;
 
+	/** TODO !!! describe !!! **/
+	public void nextPlease(HttpServletRequest req, HttpServletResponse resp, Class<? extends WebzFilter> nextFilter) throws IOException,
+			WebzException;
+
+	/** TODO !!! describe !!! **/
+	public void nextPlease(HttpServletRequest req, HttpServletResponse resp, WebzContext contextWrapper,
+			Class<? extends WebzFilter> nextFilter) throws IOException, WebzException;
+
 }
