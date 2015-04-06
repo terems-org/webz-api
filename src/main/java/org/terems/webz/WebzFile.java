@@ -51,7 +51,7 @@ public interface WebzFile {
 	public WebzMetadata getMetadata() throws IOException, WebzException;
 
 	/** TODO !!! describe !!! **/
-	public WebzFileDownloader getFileDownloader() throws IOException, WebzException;
+	public WebzReaderDownloader getFileDownloader() throws IOException, WebzException;
 
 	/** TODO !!! describe !!! **/
 	public WebzMetadata.FileSpecific copyContentToOutputStream(OutputStream out) throws IOException, WebzReadException, WebzWriteException,

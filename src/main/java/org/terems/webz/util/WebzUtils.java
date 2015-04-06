@@ -20,6 +20,8 @@ import java.io.Closeable;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.Reader;
+import java.io.Writer;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -34,12 +36,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.terems.webz.WebzException;
 import org.terems.webz.WebzFile;
-import org.terems.webz.WebzFileDownloader;
 import org.terems.webz.WebzFilter;
 import org.terems.webz.WebzIdentifiable;
 import org.terems.webz.WebzMetadata;
 import org.terems.webz.WebzProperties;
 import org.terems.webz.WebzReadException;
+import org.terems.webz.WebzReaderDownloader;
 import org.terems.webz.WebzWriteException;
 import org.terems.webz.base.BaseWebzFilter;
 
@@ -98,6 +100,38 @@ public class WebzUtils {
 		}
 
 		return bytesTotal;
+	}
+
+	/** TODO !!! describe !!! **/
+	public static long copyReaderToWriter(Reader reader, Writer writer) throws WebzReadException, WebzWriteException {
+
+		long charsTotal = 0;
+
+		char[] buff = new char[DEFAULT_BUFFER_SIZE];
+
+		while (true) {
+			int chars;
+
+			try {
+				chars = reader.read(buff);
+			} catch (IOException e) {
+				throw new WebzReadException(e);
+			}
+
+			if (chars < 1) {
+				break;
+			}
+
+			try {
+				writer.write(buff, 0, chars);
+			} catch (IOException e) {
+				throw new WebzWriteException(e);
+			}
+
+			charsTotal += chars;
+		}
+
+		return charsTotal;
 	}
 
 	/** TODO !!! describe !!! **/
@@ -168,21 +202,21 @@ public class WebzUtils {
 			throw new NullPointerException("null WebzFile was supplied - properties cannot be read");
 		}
 
-		WebzFileDownloader fileDownloader = null;
+		WebzReaderDownloader downloader = null;
 		try {
-			fileDownloader = file.getFileDownloader();
+			downloader = file.getFileDownloader();
 
-			if (fileDownloader == null) {
+			if (downloader == null) {
 				if (failIfNotFound) {
 					throw new WebzException("'" + file.getPathname() + "' was not found");
 				}
 				return false;
 			}
-			properties.load(fileDownloader.content);
+			properties.load(downloader.getReader());
 
 		} finally {
-			if (fileDownloader != null) {
-				fileDownloader.close();
+			if (downloader != null) {
+				downloader.close();
 			}
 		}
 		return true;

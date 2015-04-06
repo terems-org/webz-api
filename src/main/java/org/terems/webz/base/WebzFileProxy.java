@@ -22,11 +22,11 @@ import java.util.Collection;
 
 import org.terems.webz.WebzException;
 import org.terems.webz.WebzFile;
-import org.terems.webz.WebzFileDownloader;
 import org.terems.webz.WebzMetadata;
 import org.terems.webz.WebzMetadata.FileSpecific;
 import org.terems.webz.WebzPathnameException;
 import org.terems.webz.WebzReadException;
+import org.terems.webz.WebzReaderDownloader;
 import org.terems.webz.WebzWriteException;
 
 /** TODO !!! describe !!! **/
@@ -81,7 +81,7 @@ public abstract class WebzFileProxy implements WebzFile {
 	}
 
 	@Override
-	public WebzFileDownloader getFileDownloader() throws IOException, WebzException {
+	public WebzReaderDownloader getFileDownloader() throws IOException, WebzException {
 		return getInternalFile().getFileDownloader();
 	}
 

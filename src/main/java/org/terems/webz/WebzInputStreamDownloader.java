@@ -16,39 +16,17 @@
 
 package org.terems.webz;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-import org.terems.webz.util.WebzUtils;
-
 /** TODO !!! describe !!! **/
-public class WebzFileDownloader {
+public interface WebzInputStreamDownloader extends WebzFileSpecificDownloader {
 
 	/** TODO !!! describe !!! **/
-	public final WebzMetadata.FileSpecific fileSpecific;
+	public InputStream getInputStream() throws IOException;
 
 	/** TODO !!! describe !!! **/
-	public final InputStream content;
-
-	/** TODO !!! describe !!! **/
-	public long copyContentAndClose(OutputStream out) throws WebzReadException, WebzWriteException {
-
-		try {
-			return WebzUtils.copyInToOut(content, out);
-		} finally {
-			close();
-		}
-	}
-
-	/** TODO !!! describe !!! **/
-	public void close() {
-		WebzUtils.closeSafely(content);
-	}
-
-	/** TODO !!! describe !!! **/
-	public WebzFileDownloader(WebzMetadata.FileSpecific fileSpecific, InputStream content) {
-		this.fileSpecific = fileSpecific;
-		this.content = content;
-	}
+	public long copyContentAndClose(OutputStream out) throws WebzReadException, WebzWriteException, IOException;
 
 }
