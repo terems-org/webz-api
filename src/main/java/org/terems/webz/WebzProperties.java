@@ -97,7 +97,7 @@ public class WebzProperties extends HashMap<String, String> {
 
 	public static final String JS_ENGINE_FILTER_FILE_SUFFIXES_PROPERTY = "js.engine.filter.file.suffixes";
 	public static final String JS_ENGINE_FILTER_PROCESS_FOLDERS_PROPERTY = "js.engine.filter.process.folders";
-	public static final String JS_ENGINE_FILTER_RESULTING_MIMETYPE_PROPERTY = "js.engine.filter.resulting.mimetype";
+	public static final String JS_ENGINE_FILTER_PAGE_DEFAULT_MIMETYPE_PROPERTY = "js.engine.filter.page.default.mimetype";
 
 	public static final String PATH_TO_404_FILE_PROPERTY = "404";
 	public static final String PATH_TO_500_FILE_PROPERTY = "500";

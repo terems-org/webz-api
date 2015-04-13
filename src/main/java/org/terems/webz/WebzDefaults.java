@@ -26,6 +26,7 @@ public class WebzDefaults {
 	public static final int FS_CACHE_PAYLOAD_THRESHOLD_BYTES = 262144;
 
 	public static final String MIMETYPE = "application/octet-stream";
+	public static final String JSON_MIMETYPE = "application/json";
 	public static final String UTF8 = "UTF-8"; // ByteOrderMark.UTF_8.getCharsetName();
 
 	public static final boolean WELCOME_REDIRECTS_PERMANENT = false;
@@ -33,7 +34,7 @@ public class WebzDefaults {
 
 	public static final String JS_ENGINE_FILTER_FILE_SUFFIXES = ".md";
 	public static final boolean JS_ENGINE_FILTER_PROCESS_FOLDERS = false;
-	public static final String JS_ENGINE_FILTER_RESULTING_MIMETYPE = "text/html";
+	public static final String JS_ENGINE_FILTER_PAGE_DEFAULT_MIMETYPE = "text/html";
 
 	public static final String WELCOME_FILENAME_SUFFIXES_LIST = JS_ENGINE_FILTER_FILE_SUFFIXES + ",.html";
 	public static final String USE_PARENT_FOLDER_NAME = "..";

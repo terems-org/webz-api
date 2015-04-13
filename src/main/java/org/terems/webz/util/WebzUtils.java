@@ -38,7 +38,6 @@ import org.terems.webz.WebzException;
 import org.terems.webz.WebzFile;
 import org.terems.webz.WebzFilter;
 import org.terems.webz.WebzIdentifiable;
-import org.terems.webz.WebzMetadata;
 import org.terems.webz.WebzProperties;
 import org.terems.webz.WebzReadException;
 import org.terems.webz.WebzReaderDownloader;
@@ -223,14 +222,13 @@ public class WebzUtils {
 	}
 
 	/** TODO !!! describe !!! **/
-	public static String getFileExtension(WebzMetadata metadata) throws IOException, WebzException {
+	public static String getFileExtension(String name) throws IOException, WebzException {
 
-		if (metadata != null) {
-			String fileName = metadata.getName();
-			int i = fileName.lastIndexOf(FILE_EXT_SEPARATOR);
+		if (name != null) {
+			int i = name.lastIndexOf(FILE_EXT_SEPARATOR);
 
 			if (i > -1) {
-				return fileName.substring(i + 1);
+				return name.substring(i + 1);
 			}
 		}
 		return null;

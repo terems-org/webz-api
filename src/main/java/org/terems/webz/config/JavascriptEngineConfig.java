@@ -31,7 +31,7 @@ public class JavascriptEngineConfig extends WebzConfigObject {
 
 	private Set<String> fileSuffixesLowerCased;
 	private boolean processFolders;
-	private String resultingMimetype;
+	private String pageDefaultMimetype;
 
 	/** TODO !!! describe !!! **/
 	public Set<String> getFileSuffixesLowerCased() {
@@ -44,8 +44,8 @@ public class JavascriptEngineConfig extends WebzConfigObject {
 	}
 
 	/** TODO !!! describe !!! **/
-	public String getResultingMimetype() {
-		return resultingMimetype;
+	public String getPageDefaultMimetype() {
+		return pageDefaultMimetype;
 	}
 
 	@Override
@@ -60,8 +60,8 @@ public class JavascriptEngineConfig extends WebzConfigObject {
 				WebzProperties.JS_ENGINE_FILTER_FILE_SUFFIXES_PROPERTY, WebzDefaults.JS_ENGINE_FILTER_FILE_SUFFIXES));
 		processFolders = Boolean.valueOf(properties.getProperty(WebzProperties.JS_ENGINE_FILTER_PROCESS_FOLDERS_PROPERTY,
 				String.valueOf(WebzDefaults.JS_ENGINE_FILTER_PROCESS_FOLDERS)));
-		resultingMimetype = properties.getProperty(WebzProperties.JS_ENGINE_FILTER_RESULTING_MIMETYPE_PROPERTY,
-				WebzDefaults.JS_ENGINE_FILTER_RESULTING_MIMETYPE);
+		pageDefaultMimetype = properties.getProperty(WebzProperties.JS_ENGINE_FILTER_PAGE_DEFAULT_MIMETYPE_PROPERTY,
+				WebzDefaults.JS_ENGINE_FILTER_PAGE_DEFAULT_MIMETYPE);
 	}
 
 }

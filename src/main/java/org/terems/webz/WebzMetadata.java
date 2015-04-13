@@ -25,6 +25,9 @@ public interface WebzMetadata {
 	public String getName() throws IOException, WebzException;
 
 	/** TODO !!! describe !!! **/
+	public String getFileExtension() throws IOException, WebzException;
+
+	/** TODO !!! describe !!! **/
 	public boolean isFile() throws IOException, WebzException;
 
 	/** TODO !!! describe !!! **/

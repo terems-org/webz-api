@@ -34,14 +34,18 @@ public class MimetypesConfig extends WebzConfigObject {
 	private WebzProperties mimetypes = new WebzProperties();
 
 	/** TODO !!! describe !!! **/
-	public String getMimetype(WebzMetadata metadata, String defaultMimetype) throws IOException, WebzException {
-
-		String fileExtension = WebzUtils.getFileExtension(metadata);
+	public String getMimetype(String fileExtension, String defaultMimetype) throws IOException, WebzException {
 
 		if (fileExtension == null) {
 			return defaultMimetype;
 		}
 		return mimetypes.get(WebzUtils.toLowerCaseEng(fileExtension), defaultMimetype);
+	}
+
+	/** TODO !!! describe !!! **/
+	public String getMimetype(WebzMetadata metadata, String defaultMimetype) throws IOException, WebzException {
+
+		return getMimetype(metadata == null ? null : metadata.getFileExtension(), defaultMimetype);
 	}
 
 	@Override

@@ -20,11 +20,18 @@ import java.io.IOException;
 
 import org.terems.webz.WebzException;
 import org.terems.webz.WebzMetadata;
+import org.terems.webz.util.WebzUtils;
 
 /** TODO !!! describe !!! **/
 public abstract class BaseWebzMetadata implements WebzMetadata, WebzMetadata.FileSpecific {
 
 	public static final String[] ORIGINS_UNKNOWN = {};
+
+	/** TODO !!! describe !!! **/
+	@Override
+	public String getFileExtension() throws IOException, WebzException {
+		return WebzUtils.getFileExtension(getName());
+	}
 
 	/** TODO !!! describe !!! **/
 	@Override
