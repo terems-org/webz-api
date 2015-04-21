@@ -64,8 +64,7 @@ public class WebzProperties extends HashMap<String, String> {
 	}
 
 	public static final String WEBZ_CONFIG_FOLDER = ".webz";
-	public static final String WEBZ_JS_LIBS_FOLDER = "webz-js-libs";
-	public static final String JS_TXT_FILE = "js.txt";
+	public static final String WEBZ_JS_FILES_TXT_FILE = "webz-js-files.txt";
 
 	public static final String WEBZ_TEMPLATE_ADAPTER_JS_FUNCTION = "webzTemplateAdapter";
 

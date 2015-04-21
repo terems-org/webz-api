@@ -24,6 +24,8 @@ import java.io.Reader;
 import java.io.Writer;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.LinkedHashSet;
 import java.util.Locale;
@@ -48,6 +50,7 @@ import org.terems.webz.base.BaseWebzFilter;
 public class WebzUtils {
 
 	public static final char FILE_EXT_SEPARATOR = '.';
+	public static final char TXT_COMMENT_CHAR = '#';
 
 	private static final int DEFAULT_BUFFER_SIZE = 8192;
 
@@ -361,6 +364,21 @@ public class WebzUtils {
 			return null;
 		}
 		return value.toLowerCase(Locale.ENGLISH);
+	}
+
+	/** TODO !!! describe !!! **/
+	public static Collection<String> getTrimmedTxtLines(String txt) {
+
+		String[] allLines = txt.trim().split("\\s*\\n\\s*");
+		Collection<String> resultingLines = new ArrayList<>(allLines.length);
+
+		for (String line : allLines) {
+			// TODO allow some kind of escaping of # sign (as well as escaping leading/trailing white spaces when they shouldn't be trimmed)
+			if (line.length() > 0 && line.codePointAt(0) != TXT_COMMENT_CHAR) {
+				resultingLines.add(line);
+			}
+		}
+		return resultingLines;
 	}
 
 }
