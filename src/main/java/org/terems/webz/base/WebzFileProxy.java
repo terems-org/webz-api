@@ -86,6 +86,11 @@ public abstract class WebzFileProxy implements WebzFile {
 	}
 
 	@Override
+	public String getFileContentAsString() throws WebzReadException, WebzWriteException, IOException, WebzException {
+		return getInternalFile().getFileContentAsString();
+	}
+
+	@Override
 	public FileSpecific copyContentToOutputStream(OutputStream out) throws IOException, WebzReadException, WebzWriteException,
 			WebzException {
 		return getInternalFile().copyContentToOutputStream(out);
