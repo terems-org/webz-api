@@ -33,6 +33,11 @@ import java.util.Properties;
 import java.util.Set;
 import java.util.TimeZone;
 
+import javax.script.Bindings;
+import javax.script.Invocable;
+import javax.script.ScriptContext;
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -379,6 +384,28 @@ public class WebzUtils {
 			}
 		}
 		return resultingLines;
+	}
+
+	/** TODO !!! describe !!! **/
+	public static ScriptEngine createJavascriptEngine() {
+
+		ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
+		// TODO try --no-java to make nashorn secure:
+		// http://stackoverflow.com/questions/20793089/secure-nashorn-js-execution
+
+		Bindings engineScope = engine.getBindings(ScriptContext.ENGINE_SCOPE);
+		engineScope.put("window", engineScope);
+
+		return engine;
+	}
+
+	/** TODO !!! describe !!! **/
+	public static Invocable assertInvocable(ScriptEngine engine) {
+
+		if (!(engine instanceof Invocable)) {
+			throw new ClassCastException(engine.getClass() + " does not implement " + Invocable.class);
+		}
+		return (Invocable) engine;
 	}
 
 }

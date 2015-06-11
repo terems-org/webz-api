@@ -77,7 +77,12 @@ public class GeneralAppConfig extends WebzConfigObject {
 
 		appDisplayName = properties.getProperty(WebzProperties.APP_DISPLAY_NAME_PROPERTY);
 		defaultMimetype = properties.getProperty(WebzProperties.DEFAULT_MIMETYPE_PROPERTY, WebzDefaults.MIMETYPE);
+
+		// // ~~~ \\ // ~~~ \\ // ~~~ \\ // ~~~ \\ // ~~~ \\ //
+		// TODO move app encoding property to deployment level:
+		// \\ ~~~ // \\ ~~~ // \\ ~~~ // \\ ~~~ // \\ ~~~ // \\
 		defaultEncoding = properties.getProperty(WebzProperties.DEFAULT_ENCODING_PROPERTY, WebzDefaults.UTF8);
+
 		welcomeRedirectsPermanent = Boolean.valueOf(properties.getProperty(WebzProperties.WELCOME_REDIRECTS_PERMANENT_PROPERTY,
 				String.valueOf(WebzDefaults.WELCOME_REDIRECTS_PERMANENT)));
 
