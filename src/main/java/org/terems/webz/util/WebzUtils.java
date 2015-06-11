@@ -260,7 +260,7 @@ public class WebzUtils {
 		return value;
 	}
 
-	private static final String WEBZ_FILE_SYSTEM_ID_MSG = "WebzFileSystem ID";
+	private static final String WEBZ_FILE_SYSTEM_ID_MSG = "WebZ FileSystem ID";
 
 	/** TODO !!! describe !!! **/
 	public static String formatFileSystemMessage(String message, WebzIdentifiable identifiable) {
